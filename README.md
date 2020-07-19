@@ -63,3 +63,14 @@ File/folder | Desc
 ## Django MVC architecture
 
 URL Patterns (routes user's request to its relevant view) **-->** Views uses Models (logics, db communications, etc) **-->** Templates (Response contents)
+
+## Migration Commands
+
+To run migration commands navigate to your main project folder where manage.py is, then run:
+
+```bash
+    python manage.py makemigrations # to create a new migration
+    python manage.py showmigrations # to see your migrations
+    python manage.py migrate # to apply your migrations
+    python manage.py migrate <appname> <number> # to move to an specific migration
+```
