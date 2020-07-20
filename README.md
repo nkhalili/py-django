@@ -74,3 +74,20 @@ To run migration commands navigate to your main project folder where manage.py i
     python manage.py migrate # to apply your migrations
     python manage.py migrate <appname> <number> # to move to an specific migration
 ```
+
+## Admin configuration
+
+Add your model to your admin.py file, then create your super user by running:
+
+```python
+    from .models import Pet
+
+    # Register your models here.
+    @admin.register(Pet)
+    class Admin(admin.ModelAdmin):
+        pass
+```
+
+```bash
+    python3 manage.py createsuperuser
+```
