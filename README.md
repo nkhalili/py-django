@@ -91,3 +91,32 @@ Add your model to your admin.py file, then create your super user by running:
 ```bash
     python3 manage.py createsuperuser
 ```
+
+## Template Syntax
+
+- {{ variable }} e.g.
+
+  ```html
+    <h3>{{ pet.name }}</h3>
+  ```
+
+- {% tag %} e.g. for loop
+  
+  ```html
+    {% for pet in pets %}
+        <li>{{ pet.name }}</li>
+    {% endfor %}
+  ```
+
+- {{ variable|filter }} e.g. datetime output formatting
+  
+  ```html
+    <h3>{{ pet.name|capfirst }}</h3>
+  ```
+
+- some template tags doesn't have end tags e.g.
+  
+  ```python
+    {% url 'home' %} #output is /
+    {% url 'pet_detail' pet.id %} #output /myapp/1/
+  ```
